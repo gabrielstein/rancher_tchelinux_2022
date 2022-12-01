@@ -86,13 +86,13 @@ R: Sim, eu não tenho como fazer eles 'distro-agnóstica' - por isso o script va
 
 1. Baixe o script para instalar o K3d e rode o script
 
-`
+```
  wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
-`
+```
 
 2. Crie os clusters com o K3d (Agents: Worker nodes // Servers: Masters / Control Plane) 
 
-````
+```
 k3d cluster create two-node-cluster --agents 2 # Cria o cluster com 2 worker nodes
 k3d cluster create three-node-cluster --agents 3 # Cria o cluster com 3 worker nodes
 k3d cluster create tchelinux --servers 3 --agents 2 # Cria o cluster com 3 masters e 2 worker nodes
