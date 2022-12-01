@@ -1,5 +1,5 @@
 # rancher_tchelinux_2022
-Slides e comandos da apresentacao do Tchelinux
+Comandos e instruções para reproduzir os testes da apresentação.
 
 ### Disclaimer: Todas as instruções aqui são para criar um playground e aprender um pouco das ferramentas da apresentação!!
 
