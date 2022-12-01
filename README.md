@@ -1,7 +1,7 @@
 # rancher_tchelinux_2022
 Comandos e instruções para reproduzir os testes da apresentação.
 
-### Disclaimer: Todas as instruções aqui são para criar um playground e aprender um pouco das ferramentas da apresentação!!
+# Disclaimer: Todas as instruções aqui são para criar um playground e aprender um pouco das ferramentas da apresentação!!
 
 ## PRs são bem-vindas!
 
@@ -9,7 +9,7 @@ Comandos e instruções para reproduzir os testes da apresentação.
 Primeiramente vou colocar alguns links aqui que foram usados para a apresentação:
 
 
-## O que você irá precisar na máquina(pré-requisitos):
+### O que você irá precisar na máquina(pré-requisitos):
 
 - docker
 - curl
@@ -30,33 +30,33 @@ Se o kubectl não estiver nos repositórios da sua distro:
 [Instruções](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
 
-## Para criar clusters de teste numa máquina local|teste
+#### Para criar clusters de teste numa máquina local|teste
 - [K3d:] (https://k3d.io/v5.4.6/)
 - [Multi-cluster com o K3d:](https://docs.rancherdesktop.io/how-to-guides/create-multi-node-cluster/)
 
-## Tecnologia que o K3d usa para criar os clusters
+#### Tecnologia que o K3d usa para criar os clusters
 - [K3s(o lightweight K8s que o K3d cria clusters):](https://k3s.io/) 
 
-## Instalar o Rancher em um único Host com o docker
+#### Instalar o Rancher em um único Host com o docker
 - [Rancher:](https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker)
 
 
-## Comandos básicos para interagir com o k3d
+### Comandos básicos para interagir com o k3d
 
 
-# Lista os clusters do k3d 
+#### Lista os clusters do k3d 
 
 ```
 k3d cluster list
 ```
 
-# Apaga um cluster 
+#### Apaga um cluster 
 
 ```
 k3d cluster delete <nome do cluster>
 ```
 
-# Cria um cluster com o k3d (--servers == masters e --agents == workers - Não precisa ter masters e clientes juntos)
+#### Cria um cluster com o k3d (--servers == masters e --agents == workers - Não precisa ter masters e clientes juntos)
 
 ```
 k3d cluster create <meu cluster> --servers 3 --agents 3
@@ -86,7 +86,7 @@ R: Sim, eu não tenho como fazer eles 'distro-agnóstica' - por isso o script va
 ## Instalação manual
 
 
-# K3d
+### K3d
 
 1. Baixe o script para instalar o K3d e rode o script
 
@@ -103,7 +103,7 @@ k3d cluster create tchelinux --servers 3 --agents 2 # Cria o cluster com 3 maste
 ```
 
 
-# SUSE Rancher ( com certificados self-signed )
+### SUSE Rancher ( com certificados self-signed )
 
 1. Rodar o container do Rancher
 
