@@ -23,22 +23,22 @@ Máquina: para testes eu estou usando um i5 com 16GB de RAM. Acho que funciona t
 
 Isso pode ser instalado na maior parte das distros com:
 
-'<gerenciador de pacotes>' install -y docker curl sudo wget sudo kubectl
+`'<gerenciador de pacotes>' install -y docker curl sudo wget sudo kubectl`
 
 Se o kubectl não estiver nos repositórios da sua distro:
 
-Instruções: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+[Instruções](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
 
 ## Para criar clusters de teste numa máquina local|teste
-- K3d: https://k3d.io/v5.4.6/
-- Multi-cluster com o K3d: https://docs.rancherdesktop.io/how-to-guides/create-multi-node-cluster/
+- [K3d:] (https://k3d.io/v5.4.6/)
+- [Multi-cluster com o K3d:](https://docs.rancherdesktop.io/how-to-guides/create-multi-node-cluster/)
 
 ## Tecnologia que o K3d usa para criar os clusters
-- K3s(o lightweight K8s que o K3d cria clusters): https://k3s.io/ 
+- [K3s(o lightweight K8s que o K3d cria clusters):](https://k3s.io/) 
 
 ## Instalar o Rancher em um único Host com o docker
-- Rancher: https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker
+- [Rancher:](https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker)
 
 
 ## Comandos básicos para interagir com o k3d
@@ -46,21 +46,21 @@ Instruções: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 # Lista os clusters do k3d 
 
-`
+```
 k3d cluster list
-`
+```
 
 # Apaga um cluster 
 
-`
+```
 k3d cluster delete <nome do cluster>
-`
+```
 
 # Cria um cluster com o k3d (--servers == masters e --agents == workers - Não precisa ter masters e clientes juntos)
 
-`
+```
 k3d cluster create <meu cluster> --servers 3 --agents 3
-`
+```
 
 
 ## FAQ
@@ -96,25 +96,25 @@ R: Sim, eu não tenho como fazer eles 'distro-agnóstica' - por isso o script va
 
 2. Crie os clusters com o K3d (Agents: Worker nodes // Servers: Masters / Control Plane) 
 
-`
+````
 k3d cluster create two-node-cluster --agents 2 # Cria o cluster com 2 worker nodes
 k3d cluster create three-node-cluster --agents 3 # Cria o cluster com 3 worker nodes
 k3d cluster create tchelinux --servers 3 --agents 2 # Cria o cluster com 3 masters e 2 worker nodes
-`
+```
 
 
 # SUSE Rancher ( com certificados self-signed )
 
 1. Rodar o container do Rancher
 
-`
+```
 docker run -d --restart=unless-stopped \
   -p 80:80 -p 443:443 \
   --privileged \
   rancher/rancher:latest
-`
+```
 
-2. Acesse no Browser: https://localhost
+2. Acesse no Browser: https://`hostname -f`
 
 3. Faça um grep nos logs do container para descobrir a senha do bootstrap
 
