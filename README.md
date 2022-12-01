@@ -1,10 +1,9 @@
 # rancher_tchelinux_2022
 Slides e comandos da apresentacao do Tchelinux
 
-Olá, eu estarei atualiozando esse repositório nas próximas horas.
-
 ### Disclaimer: Todas as instruções aqui são para criar um playground e aprender um pouco das ferramentas da apresentação!!
 
+## PRs são bem-vindas!
 
 
 Primeiramente vou colocar alguns links aqui que foram usados para a apresentação:
@@ -17,7 +16,9 @@ Primeiramente vou colocar alguns links aqui que foram usados para a apresentaç�
 - wget
 - sudo
 - kubectl
-- Acesso ao superusuário via sudo
+
+Acesso: para teste é recommendado usar o root numa máquina de testes. Eu estou ainda trabalhando em scripts sem precisar do superusuário.
+Máquina: para testes eu estou usando um i5 com 16GB de RAM. Acho que funciona tranquilo com 8GB de RAM também, mas não testei.
 
 
 Isso pode ser instalado na maior parte das distros com:
@@ -40,6 +41,28 @@ Instruções: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 - Rancher: https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker
 
 
+## Comandos básicos para interagir com o k3d
+
+
+# Lista os clusters do k3d 
+
+`
+k3d cluster list
+`
+
+# Apaga um cluster 
+
+`
+k3d cluster delete <nome do cluster>
+`
+
+# Cria um cluster com o k3d (--servers == masters e --agents == workers - Não precisa ter masters e clientes juntos)
+
+`
+k3d cluster create <meu cluster> --servers 3 --agents 3
+`
+
+
 ## FAQ
 
 - Funciona com podman? R: Não testei, usei docker
@@ -47,18 +70,17 @@ Instruções: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 - Dá para usar esses clusters em produção? R: Não, de jeito nenhum, é para testes apenas
 - Você vai criar uns scripts para poder fazer o bootstrap desses clusters e SUSE Rancher? 
 R: Sim, eu não tenho como fazer eles 'distro-agnóstica' - por isso o script vai funcionar se você tiver os pré-requisitos instalados primeiro. 
+- Quantas instâncias do Rancher eu preciso para esse teste? R: Apenas uma. Como o Rancher irá fazer o gerenciamento de vários clusters não é necessário implementar o container diversas vezes.
 
 
-# Scripts
+## Scripts
+
+#Todos os scripts estao dento do diretório scripts
 
 - deploy_tumbleweed.sh: Supondo que vocês está rodando um host com openSUSE Tumbleweed, esse script executa todos os passos da intalação manual(precisa de sudo).
-- deploy_tumbleweed_custom.sh: Em desenvolvimento"
-
-
-
-
-
-
+- fast_deploy.sh:  Script para rodar quando todas as dependencias foram satisfeitas. Configure o cluster usando as variaveis de ambiente no arquivo `variaveis_env`
+- start_rancher.sh:  Script para rodar o container do Rancher apenas(supondo que já existe um cluster rodando para ser importado).
+- create_k3s_cluster.sh:  Script para criar um cluster do k3s com o k3d somente, sem Rancher. 
 
 
 ## Instalação manual

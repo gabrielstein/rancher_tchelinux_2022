@@ -1,0 +1,9 @@
+# Define o número de masters
+MASTERS="3"
+# Define o número de workers
+WORKERS="2"
+# O nome do cluster que será criado pelo k3d
+K3D_CLUSTER="k3d-exemplo"
+# O nome do container que rodará com o Rancher
+RANCHER_CONTAINER="meu_container"
+
