@@ -29,14 +29,12 @@ Se o kubectl não estiver nos repositórios da sua distro: [Instruções](https:
 
 
 #### Para criar clusters de teste numa máquina local|teste
-- [K3d] (https://k3d.io/v5.4.6/)
+- [K3d](https://k3d.io/v5.4.6/)
 - [Multi-cluster com o K3d](https://docs.rancherdesktop.io/how-to-guides/create-multi-node-cluster/)
 
-#### Tecnologia que o K3d usa para criar os clusters
-- [K3s(o lightweight K8s que o K3d cria clusters)](https://k3s.io/) 
+#### Tecnologia que o K3d usa para criar os clusters [K3s(o lightweight K8s que o K3d cria clusters)](https://k3s.io/) 
 
-#### Instalar o Rancher em um único Host com o docker
-- [Rancher](https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker)
+#### Instalar o Rancher em um único Host com o docker: [Rancher](https://docs.ranchermanager.rancher.io/v2.5/pages-for-subheaders/rancher-on-a-single-node-with-docker)
 
 
 ### Comandos básicos para interagir com o k3d
