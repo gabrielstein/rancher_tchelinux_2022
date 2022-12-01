@@ -49,6 +49,18 @@ Instruções: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 R: Sim, eu não tenho como fazer eles 'distro-agnóstica' - por isso o script vai funcionar se você tiver os pré-requisitos instalados primeiro. 
 
 
+# Scripts
+
+- deploy_tumbleweed.sh: Supondo que vocês está rodando um host com openSUSE Tumbleweed, esse script executa todos os passos da intalação manual(precisa de sudo).
+- deploy_tumbleweed_custom.sh: Em desenvolvimento"
+
+
+
+
+
+
+
+
 ## Instalação manual
 
 
